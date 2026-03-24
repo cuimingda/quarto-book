@@ -8,7 +8,7 @@
 
 本书的正文、章节、封面、插图等书内容默认采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。
 
-模板配置、脚本与仓库辅助文件采用 [MIT License](https://github.com/cuimingda/quarto-book/blob/main/LICENSE)；路径边界见仓库根目录的 [`LICENSE-content.md`](https://github.com/cuimingda/quarto-book/blob/main/LICENSE-content.md)。
+模板配置、脚本与仓库辅助文件采用 [MIT License](https://github.com/cuimingda/quarto-book/blob/main/LICENSE)；路径边界见仓库根目录的 [`CONTENT-RIGHTS.md`](https://github.com/cuimingda/quarto-book/blob/main/CONTENT-RIGHTS.md)。
 
 第三方依赖、Quarto 内置资源、生成产物中的 vendored 文件，以及任何单独声明了授权信息的引用内容，均以各自原始许可证或声明为准。
 
