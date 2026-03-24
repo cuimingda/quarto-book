@@ -1,13 +1,37 @@
 {
   "editor.formatOnSave": true,
   "prettier.documentSelectors": ["**/*.qmd"],
+  "quarto.render.renderOnSave": false,
+  "quarto.render.previewType": "internal",
+  "quarto.render.previewReveal": true,
+  "yaml.format.enable": false,
+  "files.exclude": {
+    "_book": true,
+    ".quarto": true,
+    "node_modules": true
+  },
+  "search.exclude": {
+    "_book": true,
+    ".quarto": true,
+    "node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/_book/**": true,
+    "**/.quarto/**": true,
+    "**/node_modules/**": true
+  },
   "files.associations": {
-    "*.qmd": "markdown",
     ".markdownlintignore": "plaintext",
     ".prettierignore": "plaintext",
     ".gitignore": "ignore"
   },
+  "[quarto]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "markdownlint.config": {

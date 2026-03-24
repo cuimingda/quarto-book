@@ -66,6 +66,26 @@ After creating a new book, replace these defaults first:
 - `npm run build:epub`: 仅构建 EPUB / build EPUB only
 - `npm run check`: 运行格式、lint 和构建检查 / run format, lint, and build checks
 
+## VS Code Workflow
+
+中文：
+
+- 打开仓库后，接受项目推荐扩展；推荐列表由 `.vscode/extensions.json` 固定维护。
+- `index.qmd` 保持在仓库根目录，其他书稿位于 `book/`。
+- `.qmd` 文件默认由 Quarto 扩展按 `Quarto` 语言模式处理，不再强制回退到 `Markdown`。
+- 日常预览使用 Quarto 扩展的 Preview 按钮或 `Quarto: Preview` 命令；默认在 VS Code 内部预览，不会保存即渲染。
+- 批量检查和构建优先使用 `.vscode/tasks.json` 中的稳定任务名，或继续使用 npm scripts。
+- 这个模板把格式化、预览和任务入口都固化在项目里，不依赖用户已有的 VS Code 用户设置。
+
+English:
+
+- Accept the recommended extensions when you open the repository; the list is pinned in `.vscode/extensions.json`.
+- Keep `index.qmd` at the repository root, with the rest of the book content under `book/`.
+- `.qmd` files are handled by the Quarto extension as `Quarto` language files, not forced back to plain `Markdown`.
+- Use the Quarto Preview button or the `Quarto: Preview` command for daily previewing; preview opens inside VS Code and render-on-save stays disabled.
+- Prefer the stable task names defined in `.vscode/tasks.json` for routine checks and builds, or continue using the npm scripts directly.
+- The template intentionally keeps formatting, preview, and task entry points at the project level rather than relying on personal VS Code user settings.
+
 ## Publishing
 
 默认发布方式：

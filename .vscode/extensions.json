@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "quarto.quarto",
+    "esbenp.prettier-vscode",
+    "DavidAnson.vscode-markdownlint",
+    "redhat.vscode-yaml",
+    "editorconfig.editorconfig"
+  ]
+}
