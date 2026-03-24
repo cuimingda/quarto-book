@@ -7,8 +7,10 @@ book:
   author: "John Doe"
   chapters:
     - index.qmd
-    - preface.qmd
-    - introduction.qmd
+    - matters/preface.qmd
+    - matters/introduction.qmd
+    - chapters/world-is-flat.qmd
+    - chapters/world-is-not-flat.qmd
 
 format:
   html:
