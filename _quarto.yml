@@ -19,9 +19,7 @@ book:
     left: "© 2026 Your Name"
     right:
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        href: https://github.com/cuimingda/quarto-book
 
 format:
   html:
