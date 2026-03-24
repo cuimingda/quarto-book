@@ -11,6 +11,13 @@ book:
     - matters/introduction.qmd
     - chapters/world-is-flat.qmd
     - chapters/world-is-not-flat.qmd
+  page-footer: 
+    left: "©️2026 mingda.dev" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: bluesky 
+        href: https://bsky.app/ 
 
 format:
   html:
