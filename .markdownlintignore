@@ -1,0 +1,14 @@
+# build output
+docs/
+
+# dependencies
+node_modules/
+
+# lock files
+package-lock.json
+
+# optional: editor artifacts
+.vscode/
+
+# optional: system files
+.DS_Store
