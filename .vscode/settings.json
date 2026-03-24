@@ -13,5 +13,10 @@
   "markdownlint.config": {
     "MD013": false
   },
-  "markdownlint.ignore": ["docs/**", "node_modules/**", ".markdownlintignore"]
+  "markdownlint.ignore": [
+    "_book/**",
+    "node_modules/**",
+    ".quarto/**",
+    ".markdownlintignore"
+  ]
 }

@@ -1,14 +1,12 @@
 # build output
-docs/
+_book/
 
 # dependencies
 node_modules/
 
-# lock files
-package-lock.json
-
 # optional: editor artifacts
 .vscode/
+.quarto/
 
 # optional: system files
 .DS_Store

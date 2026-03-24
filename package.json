@@ -2,30 +2,23 @@
   "name": "quarto-book",
   "version": "1.0.0",
   "description": "a quarto book template",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "lint:md": "markdownlint \"**/*.{qmd,md}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cuimingda/quarto-book.git"
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:md",
+    "lint:md": "markdownlint \"**/*.{qmd,md}\"",
+    "build": "quarto render",
+    "build:html": "quarto render --to html",
+    "build:epub": "quarto render --to epub",
+    "check": "npm run format:check && npm run lint && npm run build"
   },
   "keywords": [
     "quarto",
     "book",
     "template"
   ],
-  "author": "John Doe",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/cuimingda/quarto-book/issues"
-  },
-  "homepage": "https://github.com/cuimingda/quarto-book#readme",
   "devDependencies": {
     "markdownlint-cli": "^0.48.0",
     "prettier": "^3.8.1"
