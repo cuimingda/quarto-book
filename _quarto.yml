@@ -1,3 +1,6 @@
+license: "CC BY-SA"
+copyright: "© 2026 Your Name"
+
 project:
   type: book
   output-dir: _book
@@ -6,17 +9,18 @@ book:
   title: "Quarto Book"
   author: "John Doe"
   output-file: quarto-book
-  cover-image: assets/cover.png
+  cover-image: book/assets/cover.png
   downloads:
     - epub
   chapters:
     - index.qmd
+    - book/copyright.qmd
     - book/preface.qmd
     - book/introduction.qmd
     - book/chapters/world-is-flat.qmd
     - book/chapters/world-is-not-flat.qmd
   page-footer:
-    left: "© 2026 Your Name"
+    left: "© 2026 Your Name · 内容 CC BY-SA 4.0"
     right:
       - icon: github
         href: https://github.com/cuimingda/quarto-book
