@@ -1,7 +1,7 @@
 # Quarto Book Template
 
-[![Template License: MIT](https://img.shields.io/badge/template-MIT-green)](./LICENSE)
-[![Content License: CC BY--SA 4.0](https://img.shields.io/badge/content-CC_BY--SA_4.0-lightgrey)](./CONTENT-RIGHTS.md)
+[![Template License: MIT](https://img.shields.io/badge/template-MIT-green)](./LICENSE-MIT)
+[![Content License: CC BY--SA 4.0](https://img.shields.io/badge/content-CC_BY--SA_4.0-lightgrey)](./LICENSE-CC-BY-SA-4.0)
 
 一个用于创建 Quarto 电子书的项目模板，内置 HTML + EPUB 构建、Markdown 格式化与基础 CI。
 
@@ -67,8 +67,9 @@ After creating a new book, replace these defaults first:
 │   ├── chapters/        # Chapter source files
 │   └── copyright.qmd    # In-book copyright and licensing page
 ├── index.qmd            # Book home page (kept at root for Quarto)
-├── LICENSE              # MIT for the template/tooling layer
-├── CONTENT-RIGHTS.md    # CC BY-SA scope and split-license rules
+├── LICENSE              # Split-license overview and scope mapping
+├── LICENSE-CC-BY-SA-4.0 # Full CC BY-SA 4.0 license text for book content
+├── LICENSE-MIT          # Full MIT license text for template/tooling
 ├── _quarto.yml          # Quarto book configuration
 ├── package.json         # Template tooling scripts
 └── README.md
@@ -126,17 +127,17 @@ Default publishing flow:
 中文：
 
 - 这个仓库采用双授权，并且优先服务我自己的写作流程；其他人如果想用，预期是 fork 后再改。
-- 书内容与内容资源默认采用 [`CC BY-SA 4.0`](https://creativecommons.org/licenses/by-sa/4.0/)，包括根目录 `index.qmd`、`book/` 下的书稿，以及 `book/assets/` 下的封面、插图等资源。
-- 模板配置、工具链和仓库辅助文件默认采用 [`MIT`](./LICENSE)，包括 `_quarto.yml`、`package.json`、`package-lock.json`、`.github/`、`.vscode/`、根目录 `assets/` 和 `README.md`。
-- GitHub 仓库侧边栏会优先识别根目录 [`LICENSE`](./LICENSE) 并显示 `MIT`；内容层的 `CC BY-SA 4.0` 说明放在 [`CONTENT-RIGHTS.md`](./CONTENT-RIGHTS.md) 和书内版权页中。
+- 总体适用范围见根目录 [`LICENSE`](./LICENSE)。
+- 书内容与内容资源默认采用 [`CC BY-SA 4.0`](./LICENSE-CC-BY-SA-4.0)，包括根目录 `index.qmd`、`book/` 下的书稿，以及 `book/assets/` 下的封面、插图等资源。
+- 模板配置、工具链和仓库辅助文件默认采用 [`MIT`](./LICENSE-MIT)，包括 `_quarto.yml`、`package.json`、`package-lock.json`、`.github/`、`.vscode/`、根目录 `assets/` 和 `README.md`。
 - 第三方依赖、Quarto 内置前端资源、生成产物中的 vendored 文件等保留各自原始许可证，不并入上述两类。
 - 创建新书时，至少要替换 `_quarto.yml` 和 `book/copyright.qmd` 中的作者、年份与仓库链接。
 
 English:
 
 - This repository uses split licensing and is intentionally optimized for my own workflow; anyone else should expect to fork and adapt it.
-- Book content and content assets default to [`CC BY-SA 4.0`](https://creativecommons.org/licenses/by-sa/4.0/), including root `index.qmd`, the manuscript under `book/`, and covers or illustrations under `book/assets/`.
-- Template configuration, tooling, and repository support files default to [`MIT`](./LICENSE), including `_quarto.yml`, `package.json`, `package-lock.json`, `.github/`, `.vscode/`, root `assets/`, and `README.md`.
-- GitHub's repository sidebar will detect the root [`LICENSE`](./LICENSE) file and display `MIT`; the content-side `CC BY-SA 4.0` rules are documented in [`CONTENT-RIGHTS.md`](./CONTENT-RIGHTS.md) and the in-book copyright page.
+- The top-level scope mapping lives in [`LICENSE`](./LICENSE).
+- Book content and content assets default to [`CC BY-SA 4.0`](./LICENSE-CC-BY-SA-4.0), including root `index.qmd`, the manuscript under `book/`, and covers or illustrations under `book/assets/`.
+- Template configuration, tooling, and repository support files default to [`MIT`](./LICENSE-MIT), including `_quarto.yml`, `package.json`, `package-lock.json`, `.github/`, `.vscode/`, root `assets/`, and `README.md`.
 - Third-party dependencies, Quarto-provided frontend assets, and vendored generated files keep their original upstream licenses.
 - When creating a new book, replace the author, year, and repository link in both `_quarto.yml` and `book/copyright.qmd`.
