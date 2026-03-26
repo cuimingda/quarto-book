@@ -3,6 +3,10 @@
 [![Template License: MIT](https://img.shields.io/badge/template-MIT-green)](./LICENSE-MIT)
 [![Content License: CC BY--SA 4.0](https://img.shields.io/badge/content-CC_BY--SA_4.0-lightgrey)](./LICENSE-CC-BY-SA-4.0)
 
+中文：`book/`、`book/assets/` 和根目录 `index.qmd` 默认适用 `CC BY-SA 4.0`；模板代码、配置、工具链与仓库辅助文件默认适用 `MIT`。
+
+English: `book/`, `book/assets/`, and root `index.qmd` default to `CC BY-SA 4.0`; template code, configuration, tooling, and repository support files default to `MIT`.
+
 一个用于创建 Quarto 电子书的项目模板，内置 HTML + EPUB 构建、Markdown 格式化与基础 CI。
 
 A reusable Quarto book template with HTML + EPUB output, Markdown formatting, and baseline CI checks.
@@ -17,7 +21,7 @@ This template is optimized for my own writing workflow rather than being a unive
 
 1. 使用这个仓库创建模板副本，或者克隆后改造成新书项目。
 2. 修改 `_quarto.yml` 里的书名、作者、版权和页脚链接。
-3. 修改 `book/copyright.qmd` 里的作者、年份和仓库链接。
+3. 修改 `book/license.qmd` 里的作者、年份和仓库链接。
 4. 替换根目录 `index.qmd` 和 `book/` 下的示例书稿内容。
 5. 替换 `book/assets/` 下的内容资源，例如封面和插图。
 6. 执行 `npm ci`。
@@ -27,7 +31,7 @@ English:
 
 1. Use this repository as a template or clone it into a new project.
 2. Update the title, author, copyright text, and footer links in `_quarto.yml`.
-3. Update the author, year, and repository link in `book/copyright.qmd`.
+3. Update the author, year, and repository link in `book/license.qmd`.
 4. Replace the sample content in root `index.qmd` and under `book/`.
 5. Replace content assets such as the cover and illustrations under `book/assets/`.
 6. Run `npm ci`.
@@ -38,7 +42,7 @@ English:
 创建新书后，至少要替换这些默认值：
 
 - 书名、作者、版权信息：`_quarto.yml`
-- 版权页中的作者、年份和仓库链接：`book/copyright.qmd`
+- 授权页中的作者、年份和仓库链接：`book/license.qmd`
 - 页脚中的站点与社交链接：`_quarto.yml`
 - 首页文案：`index.qmd`
 - 导读和章节内容：`book/`
@@ -48,7 +52,7 @@ English:
 After creating a new book, replace these defaults first:
 
 - Title, author, and copyright text in `_quarto.yml`
-- Author, year, and repository link in `book/copyright.qmd`
+- Author, year, and repository link in `book/license.qmd`
 - Footer site links and social links in `_quarto.yml`
 - Landing page copy in `index.qmd`
 - Guide pages and chapter content under `book/`
@@ -65,9 +69,8 @@ After creating a new book, replace these defaults first:
 ├── book/                # CC BY-SA book source files
 │   ├── assets/          # CC BY-SA content assets such as cover and illustrations
 │   ├── chapters/        # Chapter source files
-│   └── copyright.qmd    # In-book copyright and licensing page
+│   └── license.qmd      # In-book license and usage page
 ├── index.qmd            # Book home page (kept at root for Quarto)
-├── LICENSE              # Split-license overview and scope mapping
 ├── LICENSE-CC-BY-SA-4.0 # Full CC BY-SA 4.0 license text for book content
 ├── LICENSE-MIT          # Full MIT license text for template/tooling
 ├── _quarto.yml          # Quarto book configuration
@@ -127,17 +130,15 @@ Default publishing flow:
 中文：
 
 - 这个仓库采用双授权，并且优先服务我自己的写作流程；其他人如果想用，预期是 fork 后再改。
-- 总体适用范围见根目录 [`LICENSE`](./LICENSE)。
 - 书内容与内容资源默认采用 [`CC BY-SA 4.0`](./LICENSE-CC-BY-SA-4.0)，包括根目录 `index.qmd`、`book/` 下的书稿，以及 `book/assets/` 下的封面、插图等资源。
 - 模板配置、工具链和仓库辅助文件默认采用 [`MIT`](./LICENSE-MIT)，包括 `_quarto.yml`、`package.json`、`package-lock.json`、`.github/`、`.vscode/`、根目录 `assets/` 和 `README.md`。
 - 第三方依赖、Quarto 内置前端资源、生成产物中的 vendored 文件等保留各自原始许可证，不并入上述两类。
-- 创建新书时，至少要替换 `_quarto.yml` 和 `book/copyright.qmd` 中的作者、年份与仓库链接。
+- 创建新书时，至少要替换 `_quarto.yml` 和 `book/license.qmd` 中的作者、年份与仓库链接。
 
 English:
 
 - This repository uses split licensing and is intentionally optimized for my own workflow; anyone else should expect to fork and adapt it.
-- The top-level scope mapping lives in [`LICENSE`](./LICENSE).
 - Book content and content assets default to [`CC BY-SA 4.0`](./LICENSE-CC-BY-SA-4.0), including root `index.qmd`, the manuscript under `book/`, and covers or illustrations under `book/assets/`.
 - Template configuration, tooling, and repository support files default to [`MIT`](./LICENSE-MIT), including `_quarto.yml`, `package.json`, `package-lock.json`, `.github/`, `.vscode/`, root `assets/`, and `README.md`.
 - Third-party dependencies, Quarto-provided frontend assets, and vendored generated files keep their original upstream licenses.
-- When creating a new book, replace the author, year, and repository link in both `_quarto.yml` and `book/copyright.qmd`.
+- When creating a new book, replace the author, year, and repository link in both `_quarto.yml` and `book/license.qmd`.

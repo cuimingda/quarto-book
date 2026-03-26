@@ -14,7 +14,7 @@ book:
     - epub
   chapters:
     - index.qmd
-    - book/copyright.qmd
+    - book/license.qmd
     - book/preface.qmd
     - book/introduction.qmd
     - book/chapters/world-is-flat.qmd
