@@ -1,9 +1,14 @@
 {
-  "name": "quarto-book",
+  "name": "template-book",
   "version": "1.0.0",
-  "description": "a quarto book template",
+  "description": "A Quarto book project template.",
   "private": true,
+  "packageManager": "npm@10",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
+    "init": "node ./scripts/init.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:md",

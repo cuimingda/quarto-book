@@ -11,6 +11,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  QUARTO_VERSION: 1.9.36
+
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -28,6 +31,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: ${{ env.QUARTO_VERSION }}
 
       - name: Render book
         uses: quarto-dev/quarto-actions/render@v2

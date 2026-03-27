@@ -1,10 +1,10 @@
 # 许可与使用条件 {.unnumbered}
 
-作者：Template Author
+作者：{{AUTHOR}}
 
-版权：© 2026 Template Author
+版权：© {{YEAR}} {{AUTHOR}}
 
-仓库：<https://github.com/your-org/template-book>
+仓库：<{{REPO_URL}}>
 
 本书的正文、章节、封面、插图等书内容默认采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。
 
@@ -42,4 +42,4 @@
 - 除非许可方另有单独承诺，本书内容按“原样”提供，不附带任何明示或默示担保。
 - 在法律允许的最大范围内，许可方不对因使用本书内容而产生的任何损失承担责任。
 
-完整条款见仓库根目录的 [`LICENSE-CC-BY-SA-4.0`](https://github.com/your-org/template-book/blob/main/LICENSE-CC-BY-SA-4.0)。
+完整条款见仓库根目录的 [`LICENSE-CC-BY-SA-4.0`]({{REPO_LICENSE_URL}})。

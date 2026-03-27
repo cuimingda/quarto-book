@@ -1,5 +1,7 @@
-# Quarto Book {.unnumbered}
+# Template Book {.unnumbered}
 
-这是一个用于创建 Quarto 电子书的模板项目。
+这里是这本书的首页。
+
+建议先在 `_quarto.yml` 里确认书名、作者与版权信息，再从这里开始写简介、读者对象与使用方式。
 
 HTML 版本会直接发布到 GitHub Pages，EPUB 下载入口由 Quarto 内建导航按钮提供。

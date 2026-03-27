@@ -1,14 +1,14 @@
 license: "CC BY-SA"
-copyright: "© 2026 Your Name"
+copyright: "© 2026 Template Author"
 
 project:
   type: book
   output-dir: _book
 
 book:
-  title: "Quarto Book"
-  author: "John Doe"
-  output-file: quarto-book
+  title: "Template Book"
+  author: "Template Author"
+  output-file: "template-book"
   cover-image: book/assets/cover.png
   downloads:
     - epub
@@ -17,13 +17,13 @@ book:
     - book/license.qmd
     - book/preface.qmd
     - book/introduction.qmd
-    - book/chapters/world-is-flat.qmd
-    - book/chapters/world-is-not-flat.qmd
+    - book/chapters/chapter-01.qmd
+    - book/chapters/chapter-02.qmd
   page-footer:
-    left: "© 2026 Your Name · 内容 CC BY-SA 4.0"
+    left: "© 2026 Template Author · 内容 CC BY-SA 4.0"
     right:
       - icon: github
-        href: https://github.com/cuimingda/quarto-book
+        href: "https://github.com/your-org/template-book"
 
 format:
   html:
