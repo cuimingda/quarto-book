@@ -18,6 +18,7 @@ A canonical GitHub template source for Quarto books, with HTML + EPUB output, Ma
 1. 在 GitHub 上点击 `Use this template` 创建一个新仓库。
 2. 将新仓库克隆到本地。
 3. 在新仓库根目录执行 `npm run init`。
+   初始化时，仓库信息只需要输入 GitHub owner；仓库名默认取当前目录名，直接回车即可。
 4. 执行 `npm ci`。
 5. 执行 `npm run build`。
 6. 开始替换首页、章节和内容资源，进入写作流程。
@@ -27,6 +28,7 @@ English:
 1. Click `Use this template` on GitHub to create a new repository.
 2. Clone the new repository locally.
 3. Run `npm run init` at the repository root.
+   When prompted for repository info, you can enter only the GitHub owner; the repository name defaults to the current directory.
 4. Run `npm ci`.
 5. Run `npm run build`.
 6. Replace the starter landing page, chapters, and content assets, then start writing.
@@ -34,7 +36,7 @@ English:
 也可以直接用参数模式完成初始化：
 
 ```bash
-npm run init -- --title "My Book" --author "Your Name" --year 2026 --slug my-book --repo https://github.com/you/my-book --non-interactive
+npm run init -- --title "My Book" --author "Your Name" --year 2026 --slug my-book --repo you --non-interactive
 ```
 
 ## What `npm run init` Updates

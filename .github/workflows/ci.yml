@@ -68,7 +68,7 @@ jobs:
           git archive --format=tar HEAD | tar -xf - -C "$tmpdir"
           cd "$tmpdir"
 
-          npm run init -- --title "Smoke Test Book" --author "CI" --year 2026 --slug smoke-test-book --repo https://github.com/example/smoke-test-book --non-interactive
+          npm run init -- --title "Smoke Test Book" --author "CI" --year 2026 --slug smoke-test-book --repo example --non-interactive
 
           test -f .template-init.json
           grep -q '^# Smoke Test Book$' README.md
@@ -85,12 +85,12 @@ jobs:
           grep -q '仓库：<https://github.com/example/smoke-test-book>' book/license.qmd
           ! grep -R -E 'Template Book|Template Author|template-book|https://github.com/your-org/template-book' README.md _quarto.yml book/license.qmd package.json package-lock.json index.qmd book/preface.qmd book/introduction.qmd book/chapters
 
-          if npm run init -- --title "Should Fail" --author "CI" --year 2026 --slug should-fail --repo https://github.com/example/should-fail --non-interactive; then
+          if npm run init -- --title "Should Fail" --author "CI" --year 2026 --slug should-fail --repo example --non-interactive; then
             echo "expected second init without --force to fail"
             exit 1
           fi
 
-          npm run init -- --title "Smoke Test Book" --author "CI" --year 2026 --slug smoke-test-book --repo https://github.com/example/smoke-test-book --non-interactive --force
+          npm run init -- --title "Smoke Test Book" --author "CI" --year 2026 --slug smoke-test-book --repo example --non-interactive --force
           npm ci
           npm run build
           test -f _book/index.html

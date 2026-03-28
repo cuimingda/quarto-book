@@ -94,8 +94,8 @@ Required:
 
 Optional:
   --year <value>             Copyright year (default: current year)
-  --slug <value>             Repository slug / output file
-  --repo <value>             Repository URL
+  --slug <value>             Repository slug / output file (default: current directory)
+  --repo <value>             GitHub owner, owner/repo, or repository URL
   --non-interactive          Fail instead of prompting for missing fields
   --force                    Rewrite managed fields after initialization
 `);
@@ -133,6 +133,73 @@ function normalizeRepoUrl(value) {
   }
 
   return trimmed.replace(/\.git$/, "");
+}
+
+function parseGitHubRepo(value) {
+  const trimmed = normalizeRepoUrl(value);
+
+  if (!trimmed) {
+    return null;
+  }
+
+  const githubUrlMatch = trimmed.match(
+    /^https:\/\/github\.com\/([^/]+)\/([^/]+)$/,
+  );
+
+  if (githubUrlMatch) {
+    return {
+      owner: githubUrlMatch[1],
+      repo: githubUrlMatch[2],
+    };
+  }
+
+  const ownerRepoMatch = trimmed.match(/^([^/\s]+)\/([^/\s]+)$/);
+
+  if (ownerRepoMatch) {
+    return {
+      owner: ownerRepoMatch[1],
+      repo: ownerRepoMatch[2],
+    };
+  }
+
+  return null;
+}
+
+function getGitHubOwner(value) {
+  const parsed = parseGitHubRepo(value);
+  return parsed?.owner ?? "";
+}
+
+function resolveRepoUrl(value, slug) {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return "";
+  }
+
+  if (/^(?:[a-z][a-z0-9+.-]*:\/\/|git@)/i.test(trimmed)) {
+    return normalizeRepoUrl(trimmed);
+  }
+
+  const parsed = parseGitHubRepo(trimmed);
+
+  if (parsed) {
+    return `https://github.com/${parsed.owner}/${parsed.repo}`;
+  }
+
+  if (/^[^/\s]+$/.test(trimmed)) {
+    if (!slug) {
+      throw new Error(
+        "Could not derive a repository slug. Pass --slug explicitly.",
+      );
+    }
+
+    return `https://github.com/${trimmed}/${slug}`;
+  }
+
+  throw new Error(
+    "Repository must be a GitHub owner, owner/repo, or repository URL.",
+  );
 }
 
 function getOriginUrl() {
@@ -207,12 +274,18 @@ async function prompt(rl, label, defaultValue = "") {
 }
 
 async function collectConfig(argv) {
+  const directorySlug = slugify(path.basename(ROOT));
+  const originUrl = getOriginUrl();
+  const slugDefault =
+    (argv.slug ? slugify(argv.slug) : "") ||
+    directorySlug ||
+    slugify(argv.title);
   const repoDefault = argv.repo
-    ? normalizeRepoUrl(argv.repo)
-    : normalizeRepoUrl(getOriginUrl());
-  const slugDefault = argv.slug
-    ? slugify(argv.slug)
-    : slugify(path.basename(ROOT)) || slugify(argv.title);
+    ? resolveRepoUrl(argv.repo, slugDefault)
+    : resolveRepoUrl(originUrl, slugDefault);
+  const ownerDefault = argv.repo
+    ? getGitHubOwner(argv.repo)
+    : getGitHubOwner(originUrl);
 
   if (argv.nonInteractive) {
     if (!argv.title) {
@@ -253,18 +326,20 @@ async function collectConfig(argv) {
     const year = normalizeYear(
       argv.year.trim() || (await prompt(rl, "Copyright year", CURRENT_YEAR)),
     );
+    const slugPromptDefault = slugDefault || slugify(title);
     const slug = slugify(
       argv.slug.trim() ||
-        (await prompt(rl, "Repository slug / output file", slugDefault)),
+        (await prompt(rl, "Repository slug / output file", slugPromptDefault)),
     );
 
     if (!slug) {
       throw new Error("Slug cannot be empty.");
     }
 
-    const repo = normalizeRepoUrl(
-      argv.repo.trim() || (await prompt(rl, "Repository URL", repoDefault)),
-    );
+    const repoInput =
+      argv.repo.trim() ||
+      (await prompt(rl, "GitHub owner (or owner/repo / URL)", ownerDefault));
+    const repo = resolveRepoUrl(repoInput, slug);
 
     return {
       author,
